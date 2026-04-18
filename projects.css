@@ -1,0 +1,79 @@
+/* ===== BASE PROJECT CARD ===== */
+.project-card {
+  position: relative;
+  height: 220px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  color: #fff;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.06);
+
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+}
+
+/* capa oscura encima de la imagen */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.1)
+  );
+  z-index: 1;
+}
+
+/* contenido encima */
+.project-info {
+  position: relative;
+  z-index: 2;
+}
+
+/* quitar imágenes normales */
+.project-card img {
+  display: none;
+}
+
+/* ===== IMÁGENES COMO BACKGROUND ===== */
+#store-sac {
+  background: url("img/store\ sac.png") center/cover no-repeat;
+}
+
+#karito-streaming {
+  background: url("img/karito-streaming.png") center/cover no-repeat;
+}
+
+#valentine {
+  background: url("img/valentine.jpg") center/cover no-repeat;
+}
+
+#school {
+  background: url("img/school.jpg") center/cover no-repeat;
+}
+
+/* ===== HOVER STYLE NETFLIX ===== */
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+/* botón */
+.project-actions .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+}
+
+.project-actions .btn:hover {
+  background: rgba(255,255,255,0.25);
+}

@@ -1,121 +1,306 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined:" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Software Engineer</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chat-tarductor.css">
+  <link rel="stylesheet" href="projects.css">
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-    <header id="home">
-        <h1>Jeffrey Sebastian Bohorquez</h1>
-        <div class="header-content">
-            <img src="img/yo.png" alt="Photo of Jeffrey Sebastian Bohorquez" class="profile-photo">
-            <p>Software Engineer</p>
-        </div>
-    </header>
-    
-  <nav>
-    <a href="#home"><i class="material-symbols-outlined">home</i><span class="text">Inicio</span></a>
-    <a href="#about-me"><i class="material-symbols-outlined">person_outline</i><span class="text">Sobre Mí</span></a>
-    <a href="#projects"><i class="material-symbols-outlined">work_outline</i><span class="text">Proyectos</span></a>
-    <a href="#skills"><i class="material-symbols-outlined">check</i><span class="text">Habilidades</span></a>
-    <a href="#contact"><i class="material-symbols-outlined">person_add</i><span class="text">Contacto</span></a>
-    <a href="#updates"><i class="material-symbols-outlined">autorenew</i><span class="text">Actualizaciones</span></a>
-    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i><span class="text">Instagram</span></a>
-    <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i><span class="text">Twitter</span></a>
+
+<!-- ===== TRADUCTOR ===== -->
+<div class="translator">
+  <button onclick="setLanguage('en')">EN</button>
+  <button onclick="setLanguage('es')">ES</button>
+</div>
+
+<!-- ===== SIDEBAR ===== -->
+<nav class="sidebar" id="sidebar">
+
+  <button id="toggleSidebar" class="toggle-btn">‹</button>
+
+  <ul class="nav-links">
+    <li><a href="#home"><i class="material-symbols-outlined">home</i><span data-en="Home" data-es="Inicio">Home</span></a></li>
+    <li><a href="#about"><i class="material-symbols-outlined">person</i><span data-en="About" data-es="Sobre mí">About</span></a></li>
+    <li><a href="#projects"><i class="material-symbols-outlined">work</i><span data-en="Projects" data-es="Proyectos">Projects</span></a></li>
+    <li><a href="#skills"><i class="material-symbols-outlined">check</i><span data-en="Skills" data-es="Habilidades">Skills</span></a></li>
+    <li><a href="#updates"><i class="material-symbols-outlined">autorenew</i><span data-en="Updates" data-es="Actualizaciones">Updates</span></a></li>
+    <li><a href="#contact"><i class="material-symbols-outlined">mail</i><span data-en="Contact" data-es="Contacto">Contact</span></a></li>
+  </ul>
+
+  <ul class="social-links">
+    <li><a href="https://github.com/JeffreyWTF" target="_blank"><i class="fa-brands fa-github"></i><span>GitHub</span></a></li>
+    <li><a href="https://www.instagram.com/jxfreyxtz" target="_blank"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a></li>
+    <li><a href="https://x.com/Jeffrey44367050" target="_blank"><i class="fa-brands fa-twitter"></i><span>Twitter</span></a></li>
+  </ul>
+
 </nav>
-    
-    <div class="container">
-       <div class="container">
-        <section id="about-me">
-            <div class="card"> <!-- Nueva envoltura -->
-                <h2>Sobre Mí</h2>
-                <p>As a Web Developer driven by creativity, I love crafting innovative digital solutions. Skilled in modern tech stacks,
-                     I'm eager to tackle challenging projects where I can make a real difference.</p>
-            </div>
-        </section>
-        
-        <section id="projects">
-            <div class="card">
-                <h2>Mis Proyectos</h2>
 
-                <div class="project">
-                    <h3>Proyecto 1</h3>
-                    <a 
-                        href="https://karito-streaming.web.app/?fbclid=PAVERFWARLc-lleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacv5zqW41UzOSfoG-gDs05r7Ld_RbQ0rKDMAB8_VG51razem8d9_9omB2Qs-Q_aem_AuSIjd5C3peaNzJaFSlWfQ" 
-                        class="btn"
-                        target="_blank">
-                        Ver proyecto
-                    </a>
-                </div>
+<!-- ===== MAIN ===== -->
+<main class="container">
 
-                <div class="project">
-                    <h3>Proyecto 2</h3>
-                    <button class="btn disabled" disabled>Próximamente</button>
-                </div>
+  <!-- HEADER -->
+  <section id="home" class="panel header-panel active">
+    <h1 data-en="Jeffrey Sebastian Bohorquez" data-es="Jeffrey Sebastián Bohórquez">
+      Jeffrey Sebastian Bohorquez
+    </h1>
 
-                <div class="project">
-                    <h3>Proyecto 3</h3>
-                    <button class="btn disabled" disabled>Próximamente</button>
-                </div>
-            </div>
-        </section>
-        
-        <section id="skills">
-            <div class="card">
-                <h2>Habilidades</h2>
-                <p>My technical expertise is anchored in Vanilla JavaScript (ES6+), where I focus on writing clean, 
-                    high-performance code through a deep understanding of DOM manipulation, asynchronous logic, 
-                    and event-driven architecture. This foundation is complemented by a robust mastery of Git
-                     for version control, ensuring a meticulous and organized development lifecycle through
-                      precise branching and merging strategies. Furthermore, I leverage the GitHub ecosystem 
-                      to manage collaborative workflows, maintain detailed documentation, and contribute to 
-                      open-source principles, allowing me to build scalable web solutions with a focus on efficiency
-                       and technical excellence.</p>
-                    <br>
-                <ul>
-                    <li><i class="fa-brands fa-html5"></i> HTML</li>
-                    <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
-                    <li><i class="fa-brands fa-git-alt"></i> Git</li>
-                    <li><i class="fa-brands fa-github"></i> Github</li>
-                    <li><i class="fa-solid fa-meteor"></i> Firebase</li>
-                </ul>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <div class="card">
-                <h2>Contacto</h2>
-                <p>Email: sebasborpi10@gmail.com</p>
-                <p>LinkedIn: <a href="#">perfil</a></p>
-                <p>GitHub: <a href="https://github.com/JeffreyWTF">JeffreyWTF</a></p>
-            </div>
-        </section>
-        
-        <section id="github-embed">
-            <div class="card">
-                <h2>Mi GitHub</h2>
-                <iframe src="https://github.com/JeffreyWTF" width="100%" height="600" frameborder="0"></iframe>
-            </div>
-        </section>
-        
-        <section id="updates">
-            <div class="card">
-                <h2>Actualizaciones</h2>
-                <p>1 version :l</p>
-            </div>
-        </section>
+    <div class="header-content">
+      <img src="img/yo.png" alt="profile" class="profile-photo">
+      <p data-en="Software Engineer" data-es="Ingeniero de Software">
+        Software Engineer
+      </p>
     </div>
-    
-    <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
-    </footer>
-    
-    <button id="toggle-menu">></button>
-    
-    <script src="script.js"></script>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="panel">
+    <div class="content-box about-box">
+      <h2 data-en="About Me" data-es="Sobre mí">About Me</h2>
+
+      <p 
+      data-en="I am a creative web developer passionate about building modern digital experiences that combine design, performance and functionality."
+      data-es="Soy un desarrollador web creativo apasionado por crear experiencias digitales modernas que combinan diseño, rendimiento y funcionalidad.">
+      I am a creative web developer passionate about building modern digital experiences that combine design, performance and functionality.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="panel">
+    <div class="content-box projects-box">
+      <h2 data-en="Projects" data-es="Proyectos">Projects</h2>
+
+      <div class="scroll-content">
+
+        <div id="store-sac" class="project-card store-sac">
+          <img src="img/store-sac-logo.png" alt="Store SAC">
+          <div class="project-info">
+            <h3>Store SAC</h3>
+            <p>Tienda de juegos beta 2.0</p>
+            <div class="project-actions">
+              <a href="https://store-sac-tienda-online.web.app" class="btn">Visitar</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="karito-streaming" class="project-card karito">
+          <img src="img/karito-streaming.png" alt="Karito Streaming">
+          <div class="project-info">
+            <h3>Karito Streaming</h3>
+            <p>Servicios de streaming variados</p>
+            <div class="project-actions">
+              <a href="https://karito-streaming.web.app/" class="btn">Visitar</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="valentine" class="project-card valentine">
+          <div class="project-info">
+            <h3>Carta San Valentín</h3>
+            <p>Página romántica interactiva</p>
+            <div class="project-actions">
+              <a href="https://jeffreywtf.github.io/San-valentin/" class="btn">Visitar</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="school" class="project-card school">
+          <div class="project-info">
+            <h3>Web Colegio</h3>
+            <p>Próximamente sistema escolar</p>
+            <div class="project-actions">
+              <button class="btn disabled">Próximamente</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="panel">
+    <div class="content-box skills-box">
+      <h2 data-en="Skills" data-es="Habilidades">Skills</h2>
+
+      <ul class="skills-list">
+        <li><i class="fa-brands fa-html5"></i> HTML</li>
+        <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+        <li><i class="fa-brands fa-js"></i> JavaScript</li>
+        <li><i class="fa-brands fa-github"></i> GitHub</li>
+        <li><i class="fa-solid fa-fire"></i> Firebase</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- UPDATES -->
+  <section id="updates" class="panel scrollable">
+    <div class="content-box updates-box">
+      <h2 data-en="Updates" data-es="Actualizaciones">Updates</h2>
+
+      <div class="scroll-content">
+
+        <!-- 1.9 -->
+        <div class="update-card">
+          <span class="tag">v1.9</span>
+          <h3 
+            data-en="Current Version & New Projects"
+            data-es="Versión Actual y Nuevos Proyectos">
+            Current Version & New Projects
+          </h3>
+          <p 
+            data-en="Current version with new projects added to the portfolio. Improved content and expanded project showcase."
+            data-es="Versión actual con nuevos proyectos agregados al portafolio. Mejora en el contenido y ampliación de la sección de proyectos.">
+            Current version with new projects added.
+          </p>
+        </div>
+
+        <!-- 1.8 JS -->
+        <div class="update-card">
+          <span class="tag">v1.8</span>
+          <h3 
+            data-en="JavaScript Optimization"
+            data-es="Optimización de JavaScript">
+            JavaScript Optimization
+          </h3>
+          <p 
+            data-en="JavaScript code was optimized and fixed to ensure smooth functionality and better performance across all sections."
+            data-es="Se optimizó y corrigió el código JavaScript para asegurar un funcionamiento fluido y mejor rendimiento en todas las secciones.">
+            JavaScript optimized for better performance.
+          </p>
+        </div>
+
+        <!-- 1.8 Skills -->
+        <div class="update-card">
+          <span class="tag">v1.8</span>
+          <h3 
+            data-en="Skills UI Improvement"
+            data-es="Mejora de la Interfaz de Habilidades">
+            Skills UI Improvement
+          </h3>
+          <p 
+            data-en="Updated skills section with a cleaner and more modern design, improving readability and visual consistency."
+            data-es="Se mejoró la sección de habilidades con un diseño más limpio y moderno, mejorando la legibilidad y consistencia visual.">
+            Improved skills section design.
+          </p>
+        </div>
+
+        <!-- 1.7 -->
+        <div class="update-card">
+          <span class="tag">v1.7</span>
+          <h3 
+            data-en="Projects Section Redesign"
+            data-es="Rediseño de la Sección de Proyectos">
+            Projects Section Redesign
+          </h3>
+          <p 
+            data-en="New design for the projects section, improving visual presentation and interaction to better showcase each project."
+            data-es="Nuevo diseño en la sección de proyectos, mejorando la presentación visual e interacción para mostrar mejor cada proyecto.">
+            New design for projects section.
+          </p>
+        </div>
+
+        <!-- 1.6 -->
+        <div class="update-card">
+          <span class="tag">v1.6</span>
+          <h3 
+            data-en="Major Redesign & Features"
+            data-es="Rediseño Completo y Nuevas Funcionalidades">
+            Major Redesign & Features
+          </h3>
+          <p 
+            data-en="Complete redesign: removed scroll system and implemented independent sections like separate pages. Added beta chatbot and language translator. New animations, improved styles, and updated blue color palette."
+            data-es="Rediseño completo: se eliminó el scroll y se implementaron secciones independientes como páginas. Se añadió un chatbot beta y traductor de idiomas. Nuevas animaciones, mejoras de estilo y cambio en tonos azules.">
+            Complete redesign with new features and independent sections.
+          </p>
+        </div>
+
+        <!-- 1.2 -->
+        <div class="update-card">
+          <span class="tag">v1.2</span>
+          <h3 
+            data-en="Structure & Layout Upgrade"
+            data-es="Mejora de Estructura y Diseño">
+            Structure & Layout Upgrade
+          </h3>
+          <p 
+            data-en="Major improvements in HTML and CSS structure. Sections were reorganized, content added, and images and links integrated for a more complete layout."
+            data-es="Mejoras importantes en la estructura HTML y CSS. Se reorganizaron las secciones, se añadió contenido, enlaces e imágenes para un diseño más completo.">
+            Major improvements in structure, sections, and content.
+          </p>
+        </div>
+
+        <!-- 1.1 -->
+        <div class="update-card">
+          <span class="tag">v1.1</span>
+          <h3 
+            data-en="Menu & Bug Fixes"
+            data-es="Corrección de Menú y Errores">
+            Menu & Bug Fixes
+          </h3>
+          <p 
+            data-en="Fixes applied to navigation menu and small bugs. Improved stability and usability across the interface."
+            data-es="Correcciones en el menú de navegación y pequeños errores. Mejora en la estabilidad y usabilidad de la interfaz.">
+            Fixes applied to navigation menu and small bugs.
+          </p>
+        </div>
+
+        <!-- 1.0 -->
+        <div class="update-card">
+          <span class="tag">v1.0</span>
+          <h3 
+            data-en="Portfolio Base Creation"
+            data-es="Creación Base del Portafolio">
+            Portfolio Base Creation
+          </h3>
+          <p 
+            data-en="Initial version of the portfolio created using basic HTML and CSS. A functional foundation designed to support future features and improvements."
+            data-es="Versión inicial del portafolio creada con HTML y CSS básicos. Una base funcional pensada para soportar futuras mejoras y nuevas funcionalidades.">
+            Initial version of the portfolio created using basic HTML and CSS.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="panel">
+    <div class="content-box contact-box">
+      <h2 data-en="Contact" data-es="Contacto">Contact</h2>
+      <p>Email: sebasborpi10@gmail.com</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== CHAT ===== -->
+<div class="chatbot-container">
+  <div class="chat-header" onclick="toggleChat()">
+    <i class="fa-solid fa-message"></i>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <div class="chat-message bot">Hola 👋 ¿En qué puedo ayudarte?</div>
+  </div>
+
+  <div class="chat-footer">
+    <input type="text" id="chatInput" placeholder="Escribe..." />
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+<script src="script.js" defer></script>
+
 </body>
 </html>
+
